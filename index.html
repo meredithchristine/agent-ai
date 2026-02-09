@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mixpanel vs. Google Ads Conversion Comparison</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Roboto+Mono:wght@400;500&display=swap');
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #0A1B22;
+            color: #0A1B22;
+            overflow: hidden;
+        }
+        
+        .slide-container {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+        }
+        
+        .slide {
+            width: 100%;
+            height: 100%;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+            padding: 80px 120px;
+            background: #FDF5EB;
+        }
+        
+        .slide.active {
+            display: flex;
+        }
+        
+        .slide-number {
+            position: absolute;
+            bottom: 40px;
+            right: 60px;
+            font-size: 18px;
+            font-family: 'Roboto Mono', monospace;
+            color: #1A3643;
+            opacity: 0.7;
+        }
+        
+        h1 {
+            font-family: 'Rethink Sans', sans-serif;
+            font-size: 56px;
+            margin-bottom: 30px;
+            font-weight: 700;
+            line-height: 1.2;
+            color: #0A1B22;
+        }
+        
+        h2 {
+            font-family: 'Rethink Sans', sans-serif;
+            font-size: 42px;
+            margin-bottom: 40px;
+            font-weight: 600;
+            color: #0A1B22;
+        }
+        
+        .subtitle {
+            font-family: 'Roboto Mono', monospace;
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #1A3643;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .content {
+            font-family: 'Inter', sans-serif;
+            font-size: 24px;
+            line-height: 1.6;
+            max-width: 1200px;
+            color: #0A1B22;
+        }
+        
+        .metric {
+            font-size: 32px;
+            margin: 25px 0;
+            padding: 20px;
+            background: #FFFFFF;
+            border-radius: 12px;
+            border-left: 5px solid #00C2A8;
+            color: #0A1B22;
+        }
+        
+        .metric strong {
+            display: block;
+            margin-bottom: 8px;
+            font-size: 18px;
+            font-family: 'Roboto Mono', monospace;
+            color: #1A3643;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .finding {
+            margin: 20px 0;
+            padding-left: 30px;
+            position: relative;
+        }
+        
+        .finding:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            font-size: 32px;
+            line-height: 1;
+            color: #00C2A8;
+        }
+        
+        .action-item {
+            margin: 20px 0;
+            padding: 20px 20px 20px 60px;
+            background: #FFFFFF;
+            border-radius: 10px;
+            border-left: 4px solid #00C2A8;
+            position: relative;
+            font-size: 26px;
+        }
+        
+        .action-number {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 32px;
+            font-weight: bold;
+            color: #00C2A8;
+        }
+        
+        .highlight {
+            color: #EF7B44;
+            font-weight: 600;
+        }
+        
+        .navigation {
+            position: fixed;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+        }
+        
+        button {
+            padding: 15px 35px;
+            font-size: 18px;
+            font-family: 'Inter', sans-serif;
+            background: #00C2A8;
+            border: none;
+            color: #FFFFFF;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 600;
+        }
+        
+        button:hover {
+            background: #67DACB;
+            transform: scale(1.05);
+        }
+        
+        button:disabled {
+            opacity: 0.3;
+            cursor: not-allowed;
+            background: #1A3643;
+        }
+        
+        button:disabled:hover {
+            transform: none;
+        }
+        
+        .slide-1 { background: #FDF5EB; }
+        .slide-2 { background: #B5D7F8; }
+        .slide-3 { background: #FDF5EB; }
+        .slide-4 { background: #FDF5EB; }
+        .slide-5 { background: #FDF5EB; }
+        .slide-6 { background: #B5D7F8; }
+    </style>
+</head>
+<body>
+    <div class="slide-container">
+        <!-- Slide 1: Title -->
+        <div class="slide active">
+            <h1>Mixpanel vs. Google Ads<br>Conversion Comparison</h1>
+            <div class="subtitle">January 1 - February 5, 2026</div>
+            <div class="content" style="margin-top: 40px; font-size: 28px;">
+                A data alignment analysis comparing Mixpanel User Created events against Google Ads Revsure Member conversions
+            </div>
+            <div class="slide-number">1 / 6</div>
+        </div>
+        
+        <!-- Slide 2: The Problem -->
+        <div class="slide slide-2">
+            <h2>The Problem</h2>
+            <div class="content">
+                <p style="font-size: 32px; margin-bottom: 50px;">The two systems <span class="highlight">do not agree</span></p>
+                <div class="metric">
+                    <strong>Mixpanel Sign-ups (all sources)</strong>
+                    18,618
+                </div>
+                <div class="metric">
+                    <strong>Google Ads Revsure Members</strong>
+                    910 (4.9% of total)
+                </div>
+            </div>
+            <div class="slide-number">2 / 6</div>
+        </div>
+        
+        <!-- Slide 3: Correlation Analysis -->
+        <div class="slide slide-3">
+            <h2>Correlation Analysis</h2>
+            <div class="content">
+                <div class="metric">
+                    <strong>Daily Trend Correlation</strong>
+                    r = -0.23 (negative correlation)
+                </div>
+                <p style="margin: 40px 0; font-size: 28px;">The metrics move in <span class="highlight">opposite directions</span></p>
+                <div class="metric">
+                    <strong>Direction Agreement</strong>
+                    54% (essentially a coin flip)
+                </div>
+            </div>
+            <div class="slide-number">3 / 6</div>
+        </div>
+        
+        <!-- Slide 4: Key Findings -->
+        <div class="slide slide-4">
+            <h2>Key Findings</h2>
+            <div class="content">
+                <div class="finding">
+                    <strong>Week 1 anomaly:</strong> GA claims 386 members from only 6 clicks (64:1 ratio) — only explainable by view-through attribution
+                </div>
+                <div class="finding">
+                    <strong>Volatile attribution:</strong> GA's share of Mixpanel sign-ups swings from 22% (W1) to 1.1% (W3/W6) while Mixpanel stays stable
+                </div>
+                <div class="finding">
+                    <strong>Traffic mismatch:</strong> Late January GA reports 1,000-2,000 clicks/day while Mixpanel landing page visits drop to 300-450/day — clicks exceeding total site traffic
+                </div>
+            </div>
+            <div class="slide-number">4 / 6</div>
+        </div>
+        
+        <!-- Slide 5: What This Means -->
+        <div class="slide slide-5">
+            <h2>What This Means</h2>
+            <div class="content" style="font-size: 28px;">
+                <p style="margin-bottom: 40px;">These discrepancies suggest significant measurement issues:</p>
+                <div class="finding">Attribution windows may be misaligned between systems</div>
+                <div class="finding">URL tracking may not be consistently capturing GA traffic in Mixpanel</div>
+                <div class="finding">View-through conversions may be inflating GA numbers without actual site visits</div>
+                <p style="margin-top: 50px; font-size: 32px; color: #EF7B44;">We cannot reliably measure Google Ads performance with current setup</p>
+            </div>
+            <div class="slide-number">5 / 6</div>
+        </div>
+        
+        <!-- Slide 6: Next Steps -->
+        <div class="slide slide-6">
+            <h2>Recommended Next Steps</h2>
+            <div class="content">
+                <div class="action-item">
+                    <span class="action-number">1</span>
+                    Audit Revsure attribution settings (view-through vs. click-through window)
+                </div>
+                <div class="action-item">
+                    <span class="action-number">2</span>
+                    Verify Google Ads destination URLs match Mixpanel-tracked URLs (pro.agent.ai)
+                </div>
+                <div class="action-item">
+                    <span class="action-number">3</span>
+                    Pull UTM source breakdown from Mixpanel to see how many GA clicks actually arrive
+                </div>
+            </div>
+            <div class="slide-number">6 / 6</div>
+        </div>
+    </div>
+    
+    <div class="navigation">
+        <button id="prevBtn" onclick="changeSlide(-1)">← Previous</button>
+        <button id="nextBtn" onclick="changeSlide(1)">Next →</button>
+    </div>
+    
+    <script>
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        
+        function showSlide(n) {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (n + slides.length) % slides.length;
+            slides[currentSlide].classList.add('active');
+            
+            prevBtn.disabled = currentSlide === 0;
+            nextBtn.disabled = currentSlide === slides.length - 1;
+        }
+        
+        function changeSlide(direction) {
+            showSlide(currentSlide + direction);
+        }
+        
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' && currentSlide > 0) changeSlide(-1);
+            if (e.key === 'ArrowRight' && currentSlide < slides.length - 1) changeSlide(1);
+        });
+        
+        // Initialize
+        showSlide(0);
+    </script>
+</body>
+</html>
